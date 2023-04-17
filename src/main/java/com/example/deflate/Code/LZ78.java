@@ -3,8 +3,6 @@ package com.example.deflate.Code;
 import java.util.*;
 
 public class LZ78 {
-
-
     public String compress(String input) {
         Map<Integer, String> dictionary = new HashMap<>();
         int counter = 1;
@@ -61,10 +59,8 @@ public class LZ78 {
                 char[] extra2 = el.toCharArray();
                 link = Integer.parseInt(String.valueOf(extra2[0]));
             }
-
             decompressed.add(el);
         }
-
         StringBuilder result = new StringBuilder();
         for (var el : decompressed) {
             for (int i = 1; i < el.length(); i += 2) {
